@@ -1,6 +1,8 @@
-import { createContext, useState } from "react";
+"use client";
 
-export default ThemeContext = createContext();
+import { createContext, useEffect, useState } from "react";
+
+export const ThemeContext = createContext();
 
 const getFromLocalStorage = () => {
   if (typeof window !== "undefined") {
