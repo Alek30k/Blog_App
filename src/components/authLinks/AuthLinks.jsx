@@ -24,6 +24,22 @@ const AuthLinks = () => {
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
+
+      {open && (
+        <div className={styles.responsiveMenu}>
+          <Link href="/">Homepage</Link>
+          <Link href="/">About</Link>
+          <Link href="/">Contact</Link>
+          {status === "notauthenticated" ? (
+            <Link href="/login">Login</Link>
+          ) : (
+            <>
+              <Link href="/write">Write</Link>
+              <span className={styles.link}>Logout</span>
+            </>
+          )}
+        </div>
+      )}
     </>
   );
 };
