@@ -32,6 +32,12 @@ const Card = ({ key, item }) => {
           className={styles.desc}
           dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60) }}
         /> */}
+        <p className={styles.desc}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+          temporibus quod, esse dolorum doloribus nisi tempora eius voluptate
+          suscipit! Necessitatibus sequi, magni dicta porro, suscipit nobis
+          rerum quod.
+        </p>
         <Link href="/" className={styles.link}>
           Read More
         </Link>
