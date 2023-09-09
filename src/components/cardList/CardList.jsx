@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
 import Image from "next/image";
+import Card from "../card/Card";
 // import Card from "../card/Card";
 
 // const getData = async (page, cat) => {
@@ -34,6 +35,7 @@ const CardList = async ({ page, cat }) => {
         {/* {posts?.map((item) => (
           <Card item={item} key={item._id} />
         ))} */}
+        <Card />
       </div>
       {/* <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} /> */}
       <Pagination />
