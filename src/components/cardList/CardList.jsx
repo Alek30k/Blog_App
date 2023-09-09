@@ -36,6 +36,11 @@ const CardList = async ({ page, cat }) => {
           <Card item={item} key={item._id} />
         ))} */}
         <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
       {/* <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} /> */}
       <Pagination />
