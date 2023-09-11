@@ -1,7 +1,7 @@
 import Menu from "@/components/menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
-// import Comments from "@/components/comments/Comments";
+import Comments from "@/components/comments/Comments";
 
 // const getData = async (slug) => {
 //   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
@@ -48,15 +48,36 @@ const SinglePage = async ({ params }) => {
         {/* )} */}
       </div>
       <div className={styles.content}>
-        <div className={styles.post}>
+        <d iv className={styles.post}>
           {/* <div
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           /> */}
-          <div className={styles.comment}>
-            {/* <Comments postSlug={slug} /> */}
+          <div className="description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius,
+              expedita cupiditate nobis deserunt voluptas eveniet hic velit
+              similique esse non rerum, assumenda sed facere adipisci obcaecati
+              cumque qui mollitia voluptatum!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius,
+              expedita cupiditate nobis deserunt voluptas eveniet hic velit
+              similique esse non rerum, assumenda sed facere adipisci obcaecati
+              cumque qui mollitia voluptatum!
+            </p>
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius,
+              expedita cupiditate nobis deserunt voluptas eveniet hic velit
+              similique esse non rerum, assumenda sed facere adipisci obcaecati
+              cumque qui mollitia voluptatum!
+            </p>
+            <div className={styles.comment}>
+              <Comments postSlug={slug} />
+            </div>
           </div>
-        </div>
+        </d>
         <Menu />
       </div>
     </div>
