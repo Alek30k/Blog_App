@@ -12,26 +12,25 @@ const Card = ({ key, item }) => {
       <div className={styles.textContainer}>
         <div className={styles.detail}>
           <span className={styles.date}>
-            {/* {item.createdAt.substring(0, 10)} -{" "} */}
-            11.02.2023
+            {item.createdAt.substring(0, 10)} - 11.02.2023
           </span>
           <span className={styles.category}>
-            {/* {item.catSlug} */}
+            {item.catSlug}
             CULTURE
           </span>
         </div>
         <Link href="/">
           <h1>
-            {/* {item.title} */}
+            {item.title}
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
             harum.
           </h1>
         </Link>
-        {/* <p className={styles.desc}>{item.desc.substring(0, 60)}</p> */}
-        {/* <div
+        <p className={styles.desc}>{item.desc.substring(0, 60)}</p>
+        <div
           className={styles.desc}
           dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60) }}
-        /> */}
+        />
         <p className={styles.desc}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
           temporibus quod, esse dolorum doloribus nisi tempora eius voluptate
