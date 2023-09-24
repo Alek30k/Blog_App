@@ -3,10 +3,9 @@
 import Link from "next/link";
 import styles from "./comments.module.css";
 import Image from "next/image";
-// import useSWR from "swr";
-// import { useSession } from "next-auth/react";
+import useSWR from "swr";
+import { useSession } from "next-auth/react";
 import { useState } from "react";
-const isLoading = true;
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -22,13 +21,12 @@ const fetcher = async (url) => {
 };
 
 const Comments = ({ postSlug }) => {
-  //   const { status } = useSession();
-  const status = "authenticated";
+  const { status } = useSession();
 
-  //   const { data, mutate, isLoading } = useSWR(
-  //     `http://localhost:3000/api/comments?postSlug=${postSlug}`,
-  //     fetcher
-  //   );
+  const { data, mutate, isLoading } = useSWR(
+    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    fetcher
+  );
 
   const [desc, setDesc] = useState("");
 
