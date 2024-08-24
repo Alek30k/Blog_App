@@ -2,9 +2,7 @@ import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
-  "https://blogale.vercel.app/api/categories";
+const API_URL = "https://blogale.vercel.app/api/categories";
 
 const fetchCategories = async () => {
   try {
