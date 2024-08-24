@@ -12,11 +12,28 @@
   gap: 20px;
 }
 
+.categoriesSkeleton {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 .category {
   display: flex;
   align-items: center;
   gap: 10px;
   text-transform: capitalize;
+  width: 15%;
+  height: 80px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.categorySkeleton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 15%;
   height: 80px;
   justify-content: center;

@@ -1,42 +1,59 @@
-import React from "react";
 import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const getData = async () => {
-  const res = await fetch("https://blogale.vercel.app/api/categories", {
-    cache: "no-store",
-  });
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api/categories";
 
-  if (!res.ok) {
-    throw new Error("Failed");
+const fetchCategories = async () => {
+  try {
+    const response = await fetch(API_URL, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error fetching categories: ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Failed to fetch categories:", error);
+    return [];
   }
-
-  return res.json();
 };
 
 const CategoryList = async () => {
-  const data = await getData();
+  const categories = await fetchCategories();
+
+  if (categories.length === 0) {
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.title}>Popular Categories</h1>
+        <p className={styles.noCategories}>No categories available</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {data?.map((item) => (
+        {categories.map((category) => (
           <Link
-            href={`/blog?cat=${item.slug}`}
-            className={`${styles.category} ${styles[item.slug]}`}
-            key={item._id}
+            href={`/blog?cat=${category.slug}`}
+            className={`${styles.category} ${styles[category.slug]}`}
+            key={category._id}
           >
-            {item.img && (
+            {category.img && (
               <Image
-                src={item.img}
-                alt=""
+                src={category.img}
+                alt={category.title || "Category Image"}
                 width={32}
                 height={32}
                 className={styles.image}
               />
             )}
-            {item.title}
+            {category.title}
           </Link>
         ))}
       </div>
