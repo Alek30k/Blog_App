@@ -24,14 +24,14 @@ const fetchCategories = async () => {
 const CategoryList = async () => {
   const categories = await fetchCategories();
 
-  // if (categories.length === 0) {
-  //   return (
-  //     <div className={styles.container}>
-  //       <h1 className={styles.title}>Popular Categories</h1>
-  //       <p className={styles.noCategories}>No categories available</p>
-  //     </div>
-  //   );
-  // }
+  if (categories.length === 0) {
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.title}>Popular Categories</h1>
+        <p className={styles.noCategories}>No categories available</p>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>
