@@ -17,6 +17,8 @@ import { app } from "@/utils/firebase";
 
 const WritePage = () => {
   const { status } = useSession();
+  const ReactQuill = dinamic(() => import("react-quill"), { ssr: false });
+
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
@@ -141,13 +143,13 @@ const WritePage = () => {
             </button>
           </div>
         )}
-        {/* <ReactQuill
+        <ReactQuill
           className={styles.textArea}
           theme="bubble"
           value={value}
           onChange={setValue}
           placeholder="Tell your story..."
-        /> */}
+        />
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
