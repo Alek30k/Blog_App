@@ -4,6 +4,8 @@ import Image from "next/image";
 
 const API_URL = "https://blogale.vercel.app/api/categories";
 
+// const API_URL = "http://localhost:3000/api/categories";
+
 const fetchCategories = async () => {
   try {
     const response = await fetch(API_URL, {
