@@ -39,24 +39,28 @@ const CategoryList = async () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {categories.map((category) => (
-          <Link
-            href={`/blog?cat=${category.slug}`}
-            className={`${styles.category} ${styles[category.slug]}`}
-            key={category._id}
-          >
-            {category.img && (
-              <Image
-                src={category.img}
-                alt={category.title || "Category Image"}
-                width={32}
-                height={32}
-                className={styles.image}
-              />
-            )}
-            {category.title}
-          </Link>
-        ))}
+        {Array.isArray(categories) ? (
+          categories.map((category) => (
+            <Link
+              href={`/blog?cat=${category.slug}`}
+              className={`${styles.category} ${styles[category.slug]}`}
+              key={category._id}
+            >
+              {category.img && (
+                <Image
+                  src={category.img}
+                  alt={category.title || "Category Image"}
+                  width={32}
+                  height={32}
+                  className={styles.image}
+                />
+              )}
+              {category.title}
+            </Link>
+          ))
+        ) : (
+          <p>No categotegories available</p>
+        )}
       </div>
     </div>
   );
