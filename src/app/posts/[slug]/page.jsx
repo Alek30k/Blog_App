@@ -3,9 +3,12 @@ import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 
+const API_URL_PRODUCTION = "https://blogale.vercel.app";
+
+const API_URL_LOCAL = "http://localhost:3000";
+
 const getData = async (slug) => {
-  const res = await fetch(`https://blogale.vercel.app/api/posts/${slug}`, {
-    // const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`${API_URL_PRODUCTION}/api/posts/${slug}`, {
     cache: "no-store",
   });
 

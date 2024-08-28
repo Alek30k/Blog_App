@@ -2,13 +2,13 @@ import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const API_URL = "https://blogale.vercel.app/api/categories";
+const API_URL_PRODUCTION = "https://blogale.vercel.app/api/categories";
 
-// const API_URL = "http://localhost:3000/api/categories";
+const API_URL_LOCAL = "http://localhost:3000/api/categories";
 
 const fetchCategories = async () => {
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(API_URL_PRODUCTION, {
       cache: "no-store",
     });
 
