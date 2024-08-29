@@ -8,6 +8,15 @@ const LoginPage = () => {
 
   console.log(data, status);
 
+  if (status === "loading") {
+    return <div>Cargando...</div>;
+  }
+
+  if (status === "error") {
+    console.error("Error al obtener la sesión:", session);
+    return <div>Error de autenticación</div>;
+  }
+
   const router = useRouter();
 
   if (status === "loading") {
