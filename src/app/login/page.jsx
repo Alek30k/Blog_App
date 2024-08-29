@@ -24,7 +24,7 @@ const LoginPage = () => {
   }
 
   if (status === "authenticated") {
-    router.push("/");
+    router.push("/apa");
   }
 
   return (
