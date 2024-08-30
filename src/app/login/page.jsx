@@ -19,13 +19,13 @@ const LoginPage = () => {
 
   const router = useRouter();
 
-  if (status === "loading") {
-    return <div className={styles.loading}>Loading...</div>;
-  }
+  // if (status === "loading") {
+  //   return <div className={styles.loading}>Loading...</div>;
+  // }
 
-  if (status === "authenticated") {
-    router.push("/apa");
-  }
+  // if (status === "authenticated") {
+  //   router.push("/apa");
+  // }
 
   return (
     <div className={styles.container}>
